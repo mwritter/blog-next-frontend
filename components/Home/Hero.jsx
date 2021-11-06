@@ -1,7 +1,7 @@
-export default function Hero() {
+export default function Hero({ children }) {
     return (
-        <div className="h-48 text-center">
-            <p>[Hero Section]</p>
+        <div className="mx-auto">
+            <div>{ children }</div>
         </div>
     )
 }
