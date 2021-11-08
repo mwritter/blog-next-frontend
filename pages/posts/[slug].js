@@ -1,21 +1,13 @@
 import Hero from "../../components/Home/Hero";
+import ReactMarkdown from "react-markdown";
 import PostListItem from "../../components/Post/PostListItem";
 import StrapiClient from "../../lib/strapi-client";
 export default function PostPage({ post }) {
   return (
     <>
-    <div className="bg-gray-100 mb-20 p-5">
-      <Hero>
-        {/* Not sure about this I think we should do an image */}
-        <div className="h-96 border w-full text-center">
-          [some image or video]
-        </div>
-      </Hero>
-
-    </div>
-      
-      <div className="bg-white max-w-7xl mx-auto p-11 flex-1">
-        <p>{post.content}</p>
+      {/* Add Hero section here */}
+      <div className="bg-white max-w-5xl mx-auto p-11 flex-1">
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
     </>
   );
@@ -47,7 +39,7 @@ export const getStaticPaths = async () => {
  */
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
-  const [post] = await client.getPost(slug);
+  const post = await client.getPost(slug);
   return {
     props: { post },
   };

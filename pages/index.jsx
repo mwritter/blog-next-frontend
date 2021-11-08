@@ -10,7 +10,7 @@ export default function Home({ posts }) {
         <title>Blog</title>
         <meta name="description" content="" />
       </Head>
-      <Hero />
+      {/* Add home Hero here */}
       <PostList title="Latest Posts" posts={posts} />
     </div>
   );
