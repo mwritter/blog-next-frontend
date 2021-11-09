@@ -1,6 +1,4 @@
-import Hero from "../../components/Home/Hero";
 import ReactMarkdown from "react-markdown";
-import PostListItem from "../../components/Post/PostListItem";
 import StrapiClient from "../../lib/strapi-client";
 export default function PostPage({ post }) {
   return (
