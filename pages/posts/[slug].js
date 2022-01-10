@@ -1,11 +1,19 @@
-import ReactMarkdown from "react-markdown";
+import Hero from "../../components/Hero";
 import StrapiClient from "../../lib/strapi-client";
+import Markdown from "../../components/Markdown";
 export default function PostPage({ post }) {
   return (
     <>
-      {/* Add Hero section here */}
-      <div className="bg-white max-w-5xl mx-auto p-11 flex-1">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+      <Hero>
+        <div className="p-5 bg-gray-100 flex justify-center text-gray-800">
+          <div>
+            <h1 className="text-3xl font-semibold">{post.title}</h1>
+            <p className="font-semibold text-sm text-gray-400">{post.date}</p>
+          </div>
+        </div>
+      </Hero>
+      <div className="bg-white max-w-5xl mx-auto p-11 flex-1 text-gray-800">
+        <Markdown post={post} />
       </div>
     </>
   );

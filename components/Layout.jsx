@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 
 export default function Layout(props) {
     const router = useRouter();
-    const isPostPage = router.query.slug
     return (
         <div className="flex flex-col h-screen">
             <Nav />
